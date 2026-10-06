@@ -36,9 +36,9 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 # Primary + fallback models
-# Primary + fallback models
-PRIMARY_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
-FALLBACK_MODEL = "gemini-2.5-pro"
+
+PRIMARY_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-preview")
+FALLBACK_MODEL = "gemini-3.1-flash-preview"
 
 # =========================================================
 # LOAD ORDERS
