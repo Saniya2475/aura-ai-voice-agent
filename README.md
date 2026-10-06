@@ -9,8 +9,7 @@ The agent, **Aria**, helps customers with Aura Skincare-related queries such as 
 ## 🚀 Live Demo
 
 **Application URL:**  
-http://127.0.0.1:5000
-
+https://aura-ai-voice-agent-r2qh.onrender.com/
 ---
 
 ## 🎯 Project Overview
