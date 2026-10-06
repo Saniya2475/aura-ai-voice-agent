@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Aura Skincare AI Voice Customer Support Agent"
+    >
+
+    <title>Aura Skincare | AI Voice Support</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}?v=5"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                A
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    Aura Skincare
+                </h1>
+
+                <p>
+                    AI Customer Experience
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <div class="secure-badge">
+                <span class="secure-icon">✦</span>
+                AI Powered
+            </div>
+
+            <div class="status-badge">
+
+                <span class="status-dot"></span>
+
+                <span id="connectionStatus">
+                    Ready
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="main-container">
+
+
+        <!-- =================================================
+             HERO / ARIA AGENT
+             ================================================= -->
+
+        <section class="hero-section">
+
+
+            <div class="hero-content">
+
+                <div class="hero-label">
+                    <span>✦</span>
+                    AURA AI SUPPORT
+                </div>
+
+
+                <h2>
+                    Meet <span>Aria</span>
+                </h2>
+
+
+                <p class="hero-description">
+
+                    Your intelligent Aura Skincare support specialist.
+                    Ask about orders, deliveries, returns, cancellations,
+                    payments and product issues — naturally by voice.
+
+                </p>
+
+
+                <div class="capability-row">
+
+                    <div class="capability">
+                        <span>🎙️</span>
+                        Voice AI
+                    </div>
+
+                    <div class="capability">
+                        <span>📦</span>
+                        Order Support
+                    </div>
+
+                    <div class="capability">
+                        <span>🛡️</span>
+                        Policy Aware
+                    </div>
+
+                    <div class="capability">
+                        <span>⚡</span>
+                        Real-time
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 ARIA CARD
+                 ============================================= -->
+
+            <div class="agent-panel">
+
+                <div class="agent-avatar-wrapper">
+
+                    <div class="agent-avatar">
+                        A
+                    </div>
+
+                    <span class="agent-online"></span>
+
+                </div>
+
+
+                <h3>
+                    Aria
+                </h3>
+
+
+                <p class="agent-role">
+                    AI Customer Support Specialist
+                </p>
+
+
+                <div
+                    class="call-status"
+                    id="callStatus"
+                >
+
+                    <div
+                        class="status-icon"
+                        id="stateIcon"
+                    >
+                        🎙️
+                    </div>
+
+                    <div class="status-copy">
+
+                        <div
+                            class="state-title"
+                            id="stateTitle"
+                        >
+                            Ready to help
+                        </div>
+
+                        <div
+                            class="state-description"
+                            id="stateDescription"
+                        >
+                            Click Start Call to begin
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="call-buttons">
+
+                    <button
+                        id="startCallBtn"
+                        class="start-btn"
+                        type="button"
+                        onclick="startCall()"
+                    >
+                        <span>🎙️</span>
+                        Start Call
+                    </button>
+
+
+                    <button
+                        id="endCallBtn"
+                        class="end-btn"
+                        type="button"
+                        onclick="endCall()"
+                        disabled
+                    >
+                        <span>■</span>
+                        End Call
+                    </button>
+
+                </div>
+
+
+                <div class="voice-note">
+                    <span>●</span>
+                    Microphone access required
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TEST ORDERS
+             ================================================= -->
+
+        <section class="orders-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        LIVE DATA
+                    </div>
+
+                    <h2>
+                        Test Orders
+                    </h2>
+
+                    <p>
+                        Use these orders to test Aria's order lookup
+                        and policy handling.
+                    </p>
+
+                </div>
+
+
+                <div class="order-help">
+                    <span>⌕</span>
+                    Ask Aria using the order ID
+                </div>
+
+            </div>
+
+
+
+            <div class="orders-grid">
+
+
+                <!-- ORDER 101 -->
+
+                <div
+                    class="order-card"
+                    onclick="useOrderId('ORD-101')"
+                >
+
+                    <div class="order-card-top">
+
+                        <div class="order-id">
+                            ORD-101
+                        </div>
+
+                        <span class="status delivery">
+                            Out for Delivery
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-icon">
+                        ✨
+                    </div>
+
+
+                    <h3>
+                        Vitamin C Serum
+                    </h3>
+
+                    <p class="product-size">
+                        30ml • Priya Sharma
+                    </p>
+
+
+                    <div class="order-card-bottom">
+
+                        <strong>
+                            ₹699
+                        </strong>
+
+                        <span>
+                            BlueDart
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ORDER 102 -->
+
+                <div
+                    class="order-card"
+                    onclick="useOrderId('ORD-102')"
+                >
+
+                    <div class="order-card-top">
+
+                        <div class="order-id">
+                            ORD-102
+                        </div>
+
+                        <span class="status delivered">
+                            Delivered
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-icon">
+                        ☀️
+                    </div>
+
+
+                    <h3>
+                        Hydrating Sunscreen SPF 50
+                    </h3>
+
+                    <p class="product-size">
+                        Skincare • Rahul Verma
+                    </p>
+
+
+                    <div class="order-card-bottom">
+
+                        <strong>
+                            ₹499
+                        </strong>
+
+                        <span>
+                            Delhivery
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ORDER 103 -->
+
+                <div
+                    class="order-card"
+                    onclick="useOrderId('ORD-103')"
+                >
+
+                    <div class="order-card-top">
+
+                        <div class="order-id">
+                            ORD-103
+                        </div>
+
+                        <span class="status processing">
+                            Processing
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-icon">
+                        🍃
+                    </div>
+
+
+                    <h3>
+                        Green Tea Face Wash + Toner
+                    </h3>
+
+                    <p class="product-size">
+                        Skincare • Ananya Patel
+                    </p>
+
+
+                    <div class="order-card-bottom">
+
+                        <strong>
+                            ₹850
+                        </strong>
+
+                        <span>
+                            Cancellation Eligible
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LIVE TRANSCRIPT
+             ================================================= -->
+
+        <section class="transcript-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        CONVERSATION
+                    </div>
+
+                    <h2>
+                        Live Transcript
+                    </h2>
+
+                    <p>
+                        Your voice conversation with Aria appears here.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="clear-btn"
+                    type="button"
+                    onclick="clearTranscript()"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div
+                id="transcript"
+                class="transcript"
+            >
+
+                <div class="empty-transcript">
+
+                    <div class="empty-icon">
+                        💬
+                    </div>
+
+                    <h3>
+                        Your conversation will appear here
+                    </h3>
+
+                    <p>
+                        Start a call and speak naturally with Aria.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CALL SUMMARY
+             ================================================= -->
+
+        <section
+            id="summarySection"
+            class="summary-section hidden"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        CALL ANALYTICS
+                    </div>
+
+                    <h2>
+                        Call Summary
+                    </h2>
+
+                    <p>
+                        Structured information generated from the conversation.
+                    </p>
+
+                </div>
+
+                <div class="summary-badge">
+                    ✓ Call Processed
+                </div>
+
+            </div>
+
+
+            <div class="summary-container">
+
+                <pre id="summaryOutput"></pre>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <div class="footer-brand">
+            Aura Skincare
+        </div>
+
+        <div>
+            AI Customer Support Agent
+        </div>
+
+        <div class="footer-dot">
+            •
+        </div>
+
+        <div>
+            Voice-enabled CX Platform
+        </div>
+
+    </footer>
+
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='app.js') }}?v=5"
+></script>
+
+
+</body>
+
+</html>
